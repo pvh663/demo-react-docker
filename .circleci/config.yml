@@ -4,7 +4,7 @@ orbs:
   node: circleci/node@5
 
 jobs:
-  test-node:
+  node-test:
     # Install node dependencies and run tests
     executor: node/default
     steps:
