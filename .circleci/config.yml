@@ -4,6 +4,16 @@ orbs:
   node: circleci/node@5
 
 jobs:
+  node-test:
+    # Install node dependencies and run tests
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Run tests
+          command: npm test --passWithNoTests
   build-and-push:
     environment:
       DOCKER_IMAGE: pvha663/demo-react-docker 
