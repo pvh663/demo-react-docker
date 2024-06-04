@@ -34,7 +34,7 @@ jobs:
           tag: $DOCKER_TAG
       - run:
           name: Show Digest
-          command: echo "Digest is: $(docker inspect --format='{{index .RepoDigests 0}}' $DOCKER_IMAGE:$DOCKER_TAG)"
+          command: echo "Digest is: $(</tmp/digest.txt)"
 
 workflows:
   build-and-push:
